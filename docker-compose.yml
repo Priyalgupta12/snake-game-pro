@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app:ro
+      - ./snake_scores.db:/app/snake_scores.db
+    environment:
+      - SNAKE_DB_PATH=/app/snake_scores.db
